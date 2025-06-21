@@ -1,34 +1,10 @@
 {
   "pensamentos": [
     {
-      "id": 1,
-      "conteudo": "Que bom que vc veio",
-      "autoria": "Nay",
-      "modelo": "modelo1"
-    },
-    {
-      "id": 2,
-      "conteudo": "Estudando Angular",
-      "autoria": "Nay",
-      "modelo": "modelo2"
-    },
-    {
-      "id": 3,
-      "conteudo": "Angular é o melhor",
-      "autoria": "Nay",
-      "modelo": "modelo3"
-    },
-    {
-      "conteudo": " teste",
-      "autoria": "teste",
-      "modelo": "modelo1",
-      "id": 4
-    },
-    {
-      "conteudo": " teste2",
-      "autoria": "teste2",
-      "modelo": "modelo1",
-      "id": 5
+      "conteudo": "I do not Love Angular!",
+      "autoria": "Dev Angular",
+      "modelo": "modelo2",
+      "id": 1
     }
   ]
 }
