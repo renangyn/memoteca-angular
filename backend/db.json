@@ -4,31 +4,36 @@
       "id": 1,
       "conteudo": "I do not Love Angular!",
       "autoria": "Dev Angular",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "id": 2,
       "conteudo": "Formuário Reativo",
       "autoria": "oii",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "conteudo": "adsad",
       "autoria": "sdasda",
       "modelo": "modelo1",
-      "id": 3
+      "id": 3,
+      "favorito": false
     },
     {
       "conteudo": "dsadasd",
       "autoria": "asdasda",
       "modelo": "modelo1",
-      "id": 4
+      "id": 4,
+      "favorito": false
     },
     {
       "conteudo": "Legal",
       "autoria": "Renan",
       "modelo": "modelo1",
-      "id": 5
+      "id": 5,
+      "favorito": false
     }
   ]
 }

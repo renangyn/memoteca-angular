@@ -15,10 +15,11 @@ export class PensamentoComponent implements OnInit {
     id: 0,
     conteudo: 'I love Angular',
     autoria: 'Nay',
-    modelo: 'modelo3'
+    modelo: 'modelo3',
+    favorito: false
   }
   constructor(private service: PensamentoService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -30,4 +31,17 @@ export class PensamentoComponent implements OnInit {
     }
     return 'pensamento-p'
   }  
+
+  mudarIconeFavorito(): string {
+    if(this.pensamento.favorito === false) {
+      return 'inativo';
+    }
+    else {
+      return 'ativo';
+    }
+  }
+
+  atualizarFavoritos() {
+    this.service.mudarFavorito(this.pensamento).subscribe();
+  }
 }

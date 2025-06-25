@@ -34,6 +34,7 @@ export class ListarPensamentoComponent implements OnInit {
     })
   }
 
+  //O evento que keyup é disparado sempre que uma tecla retorna à posição original no teclado, ou seja, sempre que você solta a tecla.
   pesquisarPensamentos() {
     this.haMaisPensamentos = true;
     this.paginalAtual = 1;
