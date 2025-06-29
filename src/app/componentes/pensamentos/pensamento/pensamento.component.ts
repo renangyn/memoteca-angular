@@ -6,42 +6,43 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-pensamento',
   templateUrl: './pensamento.component.html',
-  styleUrls: ['./pensamento.component.css']
+  styleUrls: ['./pensamento.component.css'],
 })
 export class PensamentoComponent implements OnInit {
-
-
   @Input() pensamento: Pensamento = {
     id: 0,
     conteudo: 'I love Angular',
     autoria: 'Nay',
     modelo: 'modelo3',
-    favorito: false
-  }
-  constructor(private service: PensamentoService,
-    private router: Router,
-  ) { }
+    favorito: false,
+  };
+  @Input() listaFavoritos: Pensamento[] = [];
 
-  ngOnInit(): void {
-  }
+  constructor(private service: PensamentoService, private router: Router) {}
+
+  ngOnInit(): void {}
 
   larguraPensamento(): string {
-    if(this.pensamento.conteudo.length >= 256){
-      return 'pensamento-g'
+    if (this.pensamento.conteudo.length >= 256) {
+      return 'pensamento-g';
     }
-    return 'pensamento-p'
-  }  
+    return 'pensamento-p';
+  }
 
   mudarIconeFavorito(): string {
-    if(this.pensamento.favorito === false) {
+    if (this.pensamento.favorito === false) {
       return 'inativo';
-    }
-    else {
+    } else {
       return 'ativo';
     }
   }
 
   atualizarFavoritos() {
-    this.service.mudarFavorito(this.pensamento).subscribe();
+    this.service.mudarFavorito(this.pensamento).subscribe(() => {
+      this.listaFavoritos.splice(
+        this.listaFavoritos.indexOf(this.pensamento),
+        1
+      );
+    });
   }
 }

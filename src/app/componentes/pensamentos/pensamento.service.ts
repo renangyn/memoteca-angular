@@ -10,7 +10,7 @@ export class PensamentoService {
 
   constructor(private http: HttpClient) {}
 
-  listar(pagina:number, filtro:string): Observable<Pensamento[]> {
+  listar(pagina:number, favoritos: boolean, filtro:string): Observable<Pensamento[]> {
     const itensPorPagina = 2;
 
     //params representa o corpo da requisição resposta HTTP, incluindo, os parâmetros serializados.
@@ -21,8 +21,12 @@ export class PensamentoService {
       if(filtro.trim().length > 2) {
         params = params.set("q", filtro);
       }
+      if(favoritos) {
+         params = params.set("favorito", true);
+      }
       return this.http.get<Pensamento[]>(this.API, {params});
   }
+
 
   criar(pensamento: Pensamento): Observable<Pensamento> {
     return this.http.post<Pensamento>(this.API, pensamento);
